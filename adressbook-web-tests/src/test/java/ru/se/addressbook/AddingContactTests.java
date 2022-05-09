@@ -16,7 +16,7 @@ public class AddingContactTests {
     wd.get("http://localhost/addressbook/");
     login("admin", "secret");
   }
-  
+
   private void login(String userName, String password) {
     wd.findElement(By.name("user")).click();
     wd.findElement(By.name("user")).clear();
