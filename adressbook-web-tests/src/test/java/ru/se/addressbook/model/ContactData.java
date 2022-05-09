@@ -1,4 +1,4 @@
-package ru.se.addressbook;
+package ru.se.addressbook.model;
 
 public class ContactData {
   private final String firstName;

@@ -1,9 +1,10 @@
-package ru.se.addressbook;
+package ru.se.addressbook.tests;
 
 import java.util.concurrent.TimeUnit;
 import org.testng.annotations.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import ru.se.addressbook.model.ContactData;
 
 public class AddingContactTests {
   private WebDriver wd;
