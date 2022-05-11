@@ -1,7 +1,6 @@
 package ru.se.addressbook.appManager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,7 +11,7 @@ public class ApplicationManager {
 
   public WebDriver wd;
   private SessionHelper sessionHelper;
-  private NavigationHapler navigationHapler;
+  private NavigationHelper navigationHapler;
   private GroupHelper groupHelper;
 
   public void init() {
@@ -21,7 +20,7 @@ public class ApplicationManager {
     wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook/");
     groupHelper = new GroupHelper(wd);
-    navigationHapler = new NavigationHapler(wd);
+    navigationHapler = new NavigationHelper(wd);
     sessionHelper = new SessionHelper(wd);
     sessionHelper.login("admin", "secret");
   }
@@ -39,20 +38,11 @@ public class ApplicationManager {
     }
   }
 
-  public boolean isAlertPresent() {
-    try {
-      wd.switchTo().alert();
-      return true;
-    } catch (NoAlertPresentException e) {
-      return false;
-    }
-  }
-
   public GroupHelper getGroupHelper() {
     return groupHelper;
   }
 
-  public NavigationHapler getNavigationHapler() {
+  public NavigationHelper getNavigationHapler() {
     return navigationHapler;
   }
 }
