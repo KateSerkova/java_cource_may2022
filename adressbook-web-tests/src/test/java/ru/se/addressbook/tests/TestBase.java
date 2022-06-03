@@ -1,8 +1,11 @@
 package ru.se.addressbook.tests;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import ru.se.addressbook.appManager.ApplicationManager;
+import ru.se.addressbook.model.ContactData;
 
 public class TestBase {
 
@@ -17,10 +20,6 @@ public class TestBase {
   public void tearDown() throws Exception {
     app.stop();
   }
-  /*test
-  5
-  3
-  1
-  1
-   */
+
+
 }
