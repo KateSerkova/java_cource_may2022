@@ -2,6 +2,7 @@ package ru.se.addressbook.tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.remote.BrowserType;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import ru.se.addressbook.appManager.ApplicationManager;
@@ -9,7 +10,7 @@ import ru.se.addressbook.model.ContactData;
 
 public class TestBase {
 
-  protected final ApplicationManager app = new ApplicationManager();
+  protected final ApplicationManager app = new ApplicationManager(BrowserType.IE);
 
   @BeforeMethod(alwaysRun = true)
   public void setUp() throws Exception {
@@ -20,6 +21,4 @@ public class TestBase {
   public void tearDown() throws Exception {
     app.stop();
   }
-
-
 }
