@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import ru.se.addressbook.model.ContactData;
 
 public class ContactModificationTests extends TestBase{
+
   @Test
   public void modificationContact(){
     app.getContactHelper().chooseContact();
